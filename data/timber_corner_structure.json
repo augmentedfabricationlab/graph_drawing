@@ -1,0 +1,666 @@
+{
+  "schemaVersion": "2.1.0",
+  "instance": {
+    "id": "inst_timber_corner",
+    "name": "Timber Frame Structure",
+    "parts": [
+      {
+        "id": "bottom_beam_front",
+        "label": "Bottom Beam Front",
+        "origin": {
+          "x": 1,
+          "y": 0.05,
+          "z": -0.06
+        },
+        "dimensions": {
+          "width": 0.12,
+          "height": 0.1,
+          "depth": 2
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "bottom_beam_side",
+          "corner_post_front_left",
+          "corner_post_front_right",
+          "middle_post_front",
+          "diagonal_brace_front"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "bottom_beam_side",
+        "label": "Bottom Beam Side",
+        "origin": {
+          "x": 0.06,
+          "y": 0.05,
+          "z": -1
+        },
+        "dimensions": {
+          "width": 2,
+          "height": 0.1,
+          "depth": 0.12
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "bottom_beam_front",
+          "corner_post_front_left",
+          "corner_post_back_left",
+          "middle_post_side",
+          "diagonal_brace_side"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "corner_post_front_left",
+        "label": "Corner Post Front Left",
+        "origin": {
+          "x": 0.05,
+          "y": 1.02,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 1.84,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "bottom_beam_front",
+          "bottom_beam_side",
+          "top_beam_front",
+          "upper_rail_front_left_outer",
+          "lower_rail_front_left_outer",
+          "upper_rail_side_front_outer",
+          "lower_rail_side_front_outer"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "top_beam_front",
+        "label": "Top Beam Front",
+        "origin": {
+          "x": 1,
+          "y": 1.99,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 0.1,
+          "depth": 2
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_front_left",
+          "corner_post_front_right",
+          "middle_post_front",
+          "diagonal_brace_front"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "top_beam_side",
+        "label": "Top Beam Side",
+        "origin": {
+          "x": 0.05,
+          "y": 1.99,
+          "z": -1
+        },
+        "dimensions": {
+          "width": 2,
+          "height": 0.1,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": "this part is week, should be strengthened"
+      },
+      {
+        "id": "corner_post_front_right",
+        "label": "Corner Post Front Right",
+        "origin": {
+          "x": 1.93,
+          "y": 1.02,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 1.84,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "bottom_beam_front",
+          "top_beam_front",
+          "lower_rail_front_right",
+          "upper_rail_front_right",
+          "diagonal_strut_front_right"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "middle_post_front",
+        "label": "Middle Post Front",
+        "origin": {
+          "x": 1.03,
+          "y": 1.02,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 1.84,
+          "depth": 0.08
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "bottom_beam_front",
+          "top_beam_front",
+          "lower_rail_front_right",
+          "upper_rail_front_right",
+          "upper_rail_front_left_inner",
+          "lower_rail_front_left_inner",
+          "diagonal_strut_front_right"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "diagonal_brace_front",
+        "label": "Diagonal Brace Front",
+        "origin": {
+          "x": 0.530471,
+          "y": 1.02,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 1.943648,
+          "depth": 0.08312
+        },
+        "rotation": {
+          "x": 0.287979,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "bottom_beam_front",
+          "top_beam_front",
+          "upper_rail_front_left_outer",
+          "upper_rail_front_left_inner",
+          "lower_rail_front_left_inner",
+          "lower_rail_front_left_outer"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "lower_rail_front_right",
+        "label": "Lower Rail Front Right",
+        "origin": {
+          "x": 1.475,
+          "y": 0.61,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 0.08,
+          "depth": 0.81
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_front_right",
+          "middle_post_front",
+          "diagonal_strut_front_right"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "upper_rail_front_right",
+        "label": "Upper Rail Front Right",
+        "origin": {
+          "x": 1.475,
+          "y": 1.43,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 0.08,
+          "depth": 0.81
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_front_right",
+          "middle_post_front",
+          "diagonal_strut_front_right"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "diagonal_strut_front_right",
+        "label": "Diagonal Strut Front Right",
+        "origin": {
+          "x": 1.475,
+          "y": 1.02,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 1.1571,
+          "depth": 0.08
+        },
+        "rotation": {
+          "x": 0.830529,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "middle_post_front",
+          "corner_post_front_right",
+          "lower_rail_front_right",
+          "upper_rail_front_right"
+        ],
+        "material": "new pine",
+        "status": "intact",
+        "notes": "New element from plan_mt8lk7cz001 (Single Diagonal Strut / Brustversatz). Runs bottom-right to top-left across the front-right bay; 80x100 mm pine, length includes a 30 mm seat into the tapered thrust notch at each end. Not yet installed."
+      },
+      {
+        "id": "upper_rail_front_left_outer",
+        "label": "Upper Rail Front Left Outer",
+        "origin": {
+          "x": 0.251162,
+          "y": 1.35,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 0.08,
+          "depth": 0.302325
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_front_left",
+          "diagonal_brace_front"
+        ],
+        "material": "historic timber",
+        "status": "missing",
+        "notes": ""
+      },
+      {
+        "id": "upper_rail_front_left_inner",
+        "label": "Upper Rail Front Left Inner",
+        "origin": {
+          "x": 0.725982,
+          "y": 1.35,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 0.08,
+          "depth": 0.528037
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "diagonal_brace_front",
+          "middle_post_front"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "lower_rail_front_left_inner",
+        "label": "Lower Rail Front Left Inner",
+        "origin": {
+          "x": 0.824308,
+          "y": 0.69,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 0.08,
+          "depth": 0.331383
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "diagonal_brace_front",
+          "middle_post_front"
+        ],
+        "material": "historic timber",
+        "status": "missing",
+        "notes": ""
+      },
+      {
+        "id": "lower_rail_front_left_outer",
+        "label": "Lower Rail Front Left Outer",
+        "origin": {
+          "x": 0.349489,
+          "y": 0.69,
+          "z": -0.05
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 0.08,
+          "depth": 0.498978
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_front_left",
+          "diagonal_brace_front"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "corner_post_back_left",
+        "label": "Corner Post Back Left",
+        "origin": {
+          "x": 0.05,
+          "y": 1.02,
+          "z": -1.93
+        },
+        "dimensions": {
+          "width": 0.1,
+          "height": 1.84,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "bottom_beam_side",
+          "lower_rail_back_left",
+          "upper_rail_back_left"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "middle_post_side",
+        "label": "Middle Post Side",
+        "origin": {
+          "x": 0.05,
+          "y": 1.02,
+          "z": -1.03
+        },
+        "dimensions": {
+          "width": 0.08,
+          "height": 1.84,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "bottom_beam_side",
+          "lower_rail_back_left",
+          "upper_rail_back_left",
+          "upper_rail_side_front_inner",
+          "lower_rail_side_front_inner"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "diagonal_brace_side",
+        "label": "Diagonal Brace Side",
+        "origin": {
+          "x": 0.05,
+          "y": 1.02,
+          "z": -0.530471
+        },
+        "dimensions": {
+          "width": 0.08312,
+          "height": 1.943648,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": -0.287979
+        },
+        "connections": [
+          "bottom_beam_side",
+          "upper_rail_side_front_outer",
+          "upper_rail_side_front_inner",
+          "lower_rail_side_front_inner",
+          "lower_rail_side_front_outer"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "lower_rail_back_left",
+        "label": "Lower Rail Back Left",
+        "origin": {
+          "x": 0.05,
+          "y": 0.61,
+          "z": -1.475
+        },
+        "dimensions": {
+          "width": 0.81,
+          "height": 0.08,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_back_left",
+          "middle_post_side"
+        ],
+        "material": "historic timber",
+        "status": "defective",
+        "notes": ""
+      },
+      {
+        "id": "upper_rail_back_left",
+        "label": "Upper Rail Back Left",
+        "origin": {
+          "x": 0.05,
+          "y": 1.43,
+          "z": -1.475
+        },
+        "dimensions": {
+          "width": 0.81,
+          "height": 0.08,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_back_left",
+          "middle_post_side"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "upper_rail_side_front_outer",
+        "label": "Upper Rail Side Front Outer",
+        "origin": {
+          "x": 0.05,
+          "y": 1.35,
+          "z": -0.251162
+        },
+        "dimensions": {
+          "width": 0.302325,
+          "height": 0.08,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_front_left",
+          "diagonal_brace_side"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "upper_rail_side_front_inner",
+        "label": "Upper Rail Side Front Inner",
+        "origin": {
+          "x": 0.05,
+          "y": 1.35,
+          "z": -0.725982
+        },
+        "dimensions": {
+          "width": 0.528038,
+          "height": 0.08,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "diagonal_brace_side",
+          "middle_post_side"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "lower_rail_side_front_inner",
+        "label": "Lower Rail Side Front Inner",
+        "origin": {
+          "x": 0.05,
+          "y": 0.69,
+          "z": -0.824309
+        },
+        "dimensions": {
+          "width": 0.331385,
+          "height": 0.08,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "diagonal_brace_side",
+          "middle_post_side"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      },
+      {
+        "id": "lower_rail_side_front_outer",
+        "label": "Lower Rail Side Front Outer",
+        "origin": {
+          "x": 0.05,
+          "y": 0.69,
+          "z": -0.349489
+        },
+        "dimensions": {
+          "width": 0.498978,
+          "height": 0.08,
+          "depth": 0.1
+        },
+        "rotation": {
+          "x": 0,
+          "y": -1.570796,
+          "z": 0
+        },
+        "connections": [
+          "corner_post_front_left",
+          "diagonal_brace_side"
+        ],
+        "material": "historic timber",
+        "status": "intact",
+        "notes": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+graft docs
+graft src
+graft tests
+graft rhino
+graft data
+
+prune .github
+
+include .bumpversion.cfg
+include .editorconfig
+
+include AUTHORS.rst
+include CHANGELOG.rst
+include CONTRIBUTING.rst
+include LICENSE
+include README.rst
+include mkdocs.yml
+
+include requirements-dev.txt tasks.py pytest.ini
+
+global-exclude *.py[cod] __pycache__ *.so *.dylib

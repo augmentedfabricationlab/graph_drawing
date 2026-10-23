@@ -1,0 +1,138 @@
+site_name: Graph Drawing
+site_url: https://augmentedfabricationlab.github.io/graph_drawing/
+site_description: Schematic drawings of graphs in Rhino, in Grasshopper, as SVG and as PDF.
+site_author: Tizian Rein
+
+repo_name: augmentedfabricationlab/graph_drawing
+repo_url: https://github.com/augmentedfabricationlab/graph_drawing/
+edit_uri: ""
+
+copyright: Copyright &copy; 2026, Augmented Fabrication Lab, Technical University of Munich
+
+exclude_docs: |
+  *.py
+
+extra:
+  generator: false
+  homepage: https://augmentedfabricationlab.github.io/graph_drawing/
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/augmentedfabricationlab/graph_drawing
+      name: graph_drawing on GitHub
+    - icon: material/web
+      link: https://www.arc.ed.tum.de/df
+      name: Professorship of Digital Fabrication, TUM
+  version:
+    provider: mike
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: material/vector-polyline
+    repo: fontawesome/brands/github
+  favicon: _images/favicon.svg
+  features:
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - assets/stylesheets/custom.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - toc:
+      permalink: "¤"
+      toc_depth: 3
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          inventories:
+            - https://docs.python.org/3/objects.inv
+            - https://compas.dev/compas/latest/objects.inv
+          options:
+            extensions:
+              - docs/sphinx_roles.py
+            docstring_style: numpy
+            docstring_section_style: list
+            docstring_options:
+              ignore_init_summary: true
+              trim_doctest_flags: true
+            filters: public
+            group_by_category: true
+            heading_level: 2
+            members_order: source
+            merge_init_into_class: true
+            separate_signature: true
+            show_bases: true
+            show_category_heading: true
+            show_docstring_modules: true
+            show_if_no_docstring: false
+            show_root_full_path: true
+            show_root_heading: true
+            show_signature: true
+            show_source: true
+            show_submodules: false
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary:
+              classes: true
+              functions: true
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Drawing graphs: usage.md
+  - Rhino and Grasshopper: rhino.md
+  - API Reference:
+      - drawing: api/graph_drawing.drawing.md
+      - layouts: api/graph_drawing.layouts.md
+      - models: api/graph_drawing.models.md
+      - frames: api/graph_drawing.frames.md
+      - export: api/graph_drawing.export.md
+      - rhino: api/graph_drawing.rhino.md
+  - Citing: citing.md
+  - License: license.md
+  - Links:
+      - COMPAS: https://compas.dev/
+      - Intervention Grammar: https://augmentedfabricationlab.github.io/intervention_grammar/
