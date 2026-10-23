@@ -10,8 +10,13 @@ and their connections. A drawing becomes SVG, PDF, Rhino geometry or a
 picture on the Grasshopper canvas.
 
 <figure markdown>
-  ![Support graph of a timber corner structure](_images/corner_support.svg)
-  <figcaption>The support graph of a timber corner structure, after Bruun et al. 2024: which member rests on which, wall by wall.</figcaption>
+  ![A timber corner structure in Rhino](_images/corner_model.png)
+  <figcaption>A timber corner structure in Rhino, shown with the Grasshopper component. Every part carries its code, coloured by type. SR2 is defective (red), FR1 and FR4 are missing (yellow), the strut FD is new.</figcaption>
+</figure>
+
+<figure markdown>
+  ![Support graph of the corner structure](_images/corner_support.svg)
+  <figcaption>Its support graph, after Bruun et al. 2024: which member rests on which, wall by wall.</figcaption>
 </figure>
 
 A drawing is made in three steps:

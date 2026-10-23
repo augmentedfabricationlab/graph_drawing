@@ -89,6 +89,23 @@ geometry disagree on, and [`frames.focus`][graph_drawing.frames.focus] shows
 how every part relates to a selected one: what it rests on, what rests on it,
 and what loses all support from below once it is taken out.
 
+```python
+g = frames.build_graph(frames.load_parts("data/timber_corner_structure.json"))
+drawing = frames.support_drawing(g)
+focus = frames.focus(g, frames.find_node(g, "SB"))
+items = frames.highlight(drawing.items, focus)
+```
+
+<figure markdown>
+  ![The brace SB selected in Rhino](_images/corner_focus_model.png)
+  <figcaption>The brace SB selected in the Grasshopper component. It rests on the sill SS and carries the rails SR3 to SR6 and the top beam ST.</figcaption>
+</figure>
+
+<figure markdown>
+  ![The focus on SB in the support graph](_images/corner_focus.svg)
+  <figcaption>The same focus in the support graph. The other parts fade.</figcaption>
+</figure>
+
 ### Reading a support drawing
 
 * Every wall gets a region (dashed box), placed like a plan seen from above.
