@@ -1,12 +1,12 @@
 Contributor's Guide
 ===================
 
-Contributions are always welcome and greatly appreciated!
+Contributions are welcome.
 
 Code contributions
 ------------------
 
-We love pull requests from everyone! Here's a quick guide to improve the code:
+To contribute code:
 
 1. Fork `the repository <https://github.com/augmentedfabricationlab/graph_drawing>`_ and clone the fork.
 2. Create a virtual environment using your tool of choice (e.g. ``virtualenv``, ``conda``, etc).
@@ -40,15 +40,14 @@ command line to ease recurring operations:
 * ``invoke clean``: Clean all generated artifacts.
 * ``invoke check``: Run various code and documentation style checks.
 * ``invoke docs``: Generate documentation.
-* ``invoke test``: Run all tests and checks in one swift command.
+* ``invoke test``: Run all tests and checks.
 * ``invoke``: Show available tasks.
 
 
 Documentation improvements
 --------------------------
 
-We could always use more documentation, whether as part of the
-introduction/examples/usage documentation or API documentation in docstrings.
+Documentation can be improved in the pages and in the docstrings.
 
 Documentation is written in Markdown in the ``docs`` folder and built with
 `MkDocs <https://www.mkdocs.org>`_; the API reference comes from the docstrings.

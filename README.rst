@@ -68,7 +68,7 @@ Installation
 Main concepts
 -------------
 
-A drawing is made in three steps, the same for every kind of graph:
+A drawing is made in three steps:
 
 1. **A graph.** A ``compas.datastructures.Graph`` whose nodes and edges carry styling attributes.
    ``frames`` makes one from a JSON of parts as boxes, ``from_model`` from a compas_model model,
@@ -76,8 +76,8 @@ A drawing is made in three steps, the same for every kind of graph:
 2. **A layout.** ``layouts.support`` places the members of a frame in the manner of Bruun et al.,
    ``layouts.layered`` puts the nodes of a directed graph in layers along its edges.
 3. **A drawing.** ``draw`` turns graph and positions into a ``Drawing``: a list of plain items
-   (circles, polygons, lines, text). The same items become SVG, PDF, Rhino geometry and the
-   drawing on the Grasshopper canvas, so all four look the same.
+   (circles, polygons, lines, text). The items become SVG, PDF, Rhino geometry or the
+   drawing on the Grasshopper canvas.
 
 .. code-block:: python
 
@@ -131,15 +131,13 @@ Make sure you setup your local development environment correctly:
     pip install -r requirements-dev.txt
     invoke add-to-rhino
 
-**You're ready to start working!**
-
 During development, use tasks on the
 command line to ease recurring operations:
 
 * ``invoke clean``: Clean all generated artifacts.
 * ``invoke check``: Run various code and documentation style checks.
 * ``invoke docs``: Generate documentation.
-* ``invoke test``: Run all tests and checks in one swift command.
+* ``invoke test``: Run all tests and checks.
 * ``invoke add-to-rhino``: Make the project accessible from Rhino.
 * ``invoke``: Show available tasks.
 

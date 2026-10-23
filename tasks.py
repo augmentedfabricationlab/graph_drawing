@@ -50,7 +50,7 @@ def confirm(question):
         if response in ('y', 'yes'):
             return True
 
-        print('Focus, kid! It is either (y)es or (n)o', file=sys.stderr)
+        print('Please answer (y)es or (n)o', file=sys.stderr)
 
 
 @task(default=True)
@@ -130,7 +130,7 @@ def test(ctx, checks=True):
 @task(help={
       'release_type': 'Type of release follows semver rules. Must be one of: major, minor, patch.'})
 def release(ctx, release_type):
-    """Releases the project in one swift command!"""
+    """Releases the project."""
     if release_type not in ('patch', 'minor', 'major'):
         raise Exit('The release type parameter is invalid.\nMust be one of: major, minor, patch')
 

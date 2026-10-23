@@ -2,9 +2,7 @@
 Graphs of models and of steps, styled for drawing.
 
 from_model reads a compas_model ``Model`` whose graph carries the state of an
-intervention in the convention shared with intervention_grammar (graph_drawing
-does not import intervention_grammar; the convention is only a set of
-attribute names):
+intervention, with the attribute names of intervention_grammar:
 
 Node attributes, per element node of ``model.graph``
     fabric      "original" | "new"
@@ -76,7 +74,7 @@ def _style(d, color):
     if d.get("fabric") == "new":
         style.update(stroke=INK, stroke_width=0.06)
     if d.get("condition") == "damaged":
-        style.update(stroke=DEFECT, stroke_width=0.09)
+        style.update(fill=DEFECT, text_color="#ffffff")
     return style
 
 
@@ -91,12 +89,12 @@ def from_model(model):
     Returns
     -------
     :class:`compas.datastructures.Graph`
-        One box per element, labelled with its name and coloured by type; a red
-        ring for damaged elements, a black ring for new ones, yellow for
+        One box per element, labelled with its name and coloured by type; red
+        for damaged elements, a black ring for new ones, yellow for
         missing ones, white with a dashed outline for elements taken out.
         Connections with a support direction point from the carried element
         to the carrying one; released connections are dashed, open ones
-        dotted. Grounded elements point to one ground node.
+        dotted. Grounded elements point to one ground node, a black triangle.
 
     """
     G = model.graph
@@ -135,15 +133,15 @@ def from_model(model):
         g.add_edge(a, b, color=color, dash=dash, arrow=arrow, source=(name[u], name[v]), order=i,
                    joint=d.get("joint"), state=d.get("state", "secured"))
     if grounded:
-        g.add_node(GROUND, label="G", shape="octagon", fill="#000000", fixed=True)
+        g.add_node(GROUND, label="", shape="triangle", fill="#000000", fixed=True)
         for k in grounded:
             g.add_edge(k, GROUND, color=g.node[k]["type_color"], arrow="head",
                        source=(k, GROUND), order=len(name) + len(grounded))
     return g
 
 
-def drawing(model, title=None, direction="down"):
-    """Draw a compas_model model with :func:`from_model` and the layered layout.
+def drawing(model, title=None, direction="down", positions=None):
+    """Draw a compas_model model with :func:`from_model`.
 
     Parameters
     ----------
@@ -152,7 +150,11 @@ def drawing(model, title=None, direction="down"):
     title : str, optional
         Title of the drawing. Defaults to the model's name.
     direction : {"down", "right"}, optional
-        Direction of the support arrows in the layout.
+        Direction of the support arrows in the layered layout.
+    positions : dict, optional
+        Position (x, y) per element name, for example where the members are
+        in the structure. The ground node goes below the grounded elements.
+        Without positions, the layered layout places the elements.
 
     Returns
     -------
@@ -160,13 +162,19 @@ def drawing(model, title=None, direction="down"):
 
     """
     g = from_model(model)
-    pos, regions = layouts.layered(g, direction=direction)
+    if positions:
+        pos, regions = dict(positions), []
+        if g.has_node(GROUND) and GROUND not in pos:
+            below = [pos[n] for n in g.neighbors(GROUND) if n in pos] or list(pos.values())
+            pos[GROUND] = (sum(p[0] for p in below) / len(below), min(p[1] for p in pos.values()) - 1.0)
+    else:
+        pos, regions = layouts.layered(g, direction=direction)
     entries = []
     for n in g.nodes():
         d = g.node[n]
         if n != GROUND and (d["type_color"], d["type"]) not in entries:
             entries.append((d["type_color"], d["type"]))
-    note = ("arrow: rests on    red ring: damaged    black ring: new    yellow: missing    "
+    note = ("arrow: rests on    black triangle: ground    red: damaged    black ring: new    yellow: missing    "
             "white: taken out    dashed: released    dotted: open")
     return draw(g, pos, regions, title=title or model.name, legend=entries, note=note)
 

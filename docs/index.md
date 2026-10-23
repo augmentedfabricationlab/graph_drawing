@@ -6,15 +6,15 @@ Schematic drawings of graphs in Rhino, in Grasshopper, as SVG and as PDF.
 
 Any graph whose nodes and edges carry a few styling attributes can be drawn:
 a sequence of actions, a program of interventions, the members of a structure
-and their connections. The same drawing becomes SVG, PDF, Rhino geometry and a
-picture on the Grasshopper canvas, so all four look the same.
+and their connections. A drawing becomes SVG, PDF, Rhino geometry or a
+picture on the Grasshopper canvas.
 
 <figure markdown>
   ![Support graph of a timber corner structure](_images/corner_support.svg)
   <figcaption>The support graph of a timber corner structure, after Bruun et al. 2024: which member rests on which, wall by wall.</figcaption>
 </figure>
 
-A drawing is made in three steps, the same for every kind of graph:
+A drawing is made in three steps:
 
 1. **A graph.** A `compas.datastructures.Graph` whose nodes and edges carry
    styling attributes. [`frames`][graph_drawing.frames] makes one from a JSON
@@ -40,8 +40,7 @@ with open("steps.svg", "w") as f:
 drawing.to_pdf("steps.pdf")
 ```
 
-Read on in [Drawing graphs](usage.md), or see how a drawing gets into
-[Rhino and Grasshopper](rhino.md).
+See [Drawing graphs](usage.md) and [Rhino and Grasshopper](rhino.md).
 
 ## Credits
 

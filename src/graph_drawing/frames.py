@@ -895,7 +895,7 @@ def drawing_graph(g):
             single.add(ws[0])
     for wall in walls:
         if wall["name"] in single:
-            dg.add_node("%s:%s" % (GROUND, wall["name"]), label="G", shape="octagon", fill="#000000",
+            dg.add_node("%s:%s" % (GROUND, wall["name"]), label="", shape="triangle", fill="#000000",
                         ground=wall["name"], fixed=True)
 
     def wall_of(n):

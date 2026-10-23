@@ -30,26 +30,36 @@ drawing = draw(g, pos, regions, title="exchange of a post")
 whose graph carries the state of an intervention, for example a state computed
 with [Intervention Grammar](https://augmentedfabricationlab.github.io/intervention_grammar/).
 Members become boxes coloured by type, connections become arrows from the
-carried member to the carrying one.
+carried member to the carrying one. With positions, every member is drawn
+where it is in the structure:
 
 ```python
 from graph_drawing import models
 
-drawing = models.drawing(model, title="a wall after a prosthesis")
+# the middle of every member in the wall, in metres
+where = {
+    "sill": (1.5, 0.0), "plate": (1.5, 2.2),
+    "post_1": (0.1, 1.1), "post_2": (1.5, 1.1), "post_3": (2.9, 1.3), "post_3.new": (2.9, 0.2),
+    "rail_1": (0.8, 1.1), "rail_2": (2.2, 1.1),
+    "brace_1": (0.4, 1.9), "brace_2": (2.2, 1.65),
+}
+positions = {name: (2.2 * x, 2.2 * y) for name, (x, y) in where.items()}
+drawing = models.drawing(model, title="a wall after a prosthesis", positions=positions)
 ```
 
 <figure markdown>
   ![A model with the state of an intervention](_images/model.svg)
 </figure>
 
+Without positions, the members are placed in layers along the arrows.
+
 [`from_model`][graph_drawing.models.from_model] gives the styled graph alone,
-for another layout. graph_drawing does not import intervention_grammar; the
-two share only these attribute names:
+for another layout. It reads these attributes:
 
 | On | Attribute | Values |
 |---|---|---|
 | element nodes | `fabric` | `"original"`, `"new"` (black ring) |
-| element nodes | `condition` | `"sound"`, `"damaged"` (red ring) |
+| element nodes | `condition` | `"sound"`, `"damaged"` (red) |
 | element nodes | `placement` | `"in"`, `"inserted"`, `"out"` (white, dashed), `"missing"` (yellow) |
 | element nodes | `type` | the role of the member, any name (colour) |
 | element nodes | `grounded` | `True`: an arrow to the ground node |
@@ -87,8 +97,8 @@ and what loses all support from below once it is taken out.
   Members of two walls stand between the two regions, members of no wall in
   the middle.
 * Codes: wall letter, type letter, number along the wall (`FR3` is the front
-  wall, rail 3), `C` corner, `G` ground.
-* Node colour is the member type, always together with the type letter. Red
+  wall, rail 3), `C` corner. The black triangles are the ground.
+* Node colour is the member type, together with the type letter. Red
   ring: defective, yellow: missing, black ring: new.
 * An arrow points from the carried part to the carrying part, coloured like
   the carried part. Solid: listed by both parts, dashed: listed by one,

@@ -41,7 +41,7 @@ def wall():
 def test_from_model_styles():
     g = from_model(wall())
     assert set(g.nodes()) == {"sill", "post_1", "post_2", "rail", "plate", "ground"}
-    assert g.node["post_2"]["stroke"] == "#c0392b"  # damaged: red ring
+    assert g.node["post_2"]["fill"] == "#c0392b"    # damaged: red
     assert g.node["rail"]["stroke"] == "#0b0b0b"    # new: black ring
     assert g.node["plate"]["fill"] == "#ffffff"     # taken out: hollow
     assert g.has_edge(("post_1", "sill")) and g.has_edge(("sill", "ground"))
@@ -55,3 +55,16 @@ def test_model_drawing_layers():
     top = max(p[1] for p in pos["plate"])
     bottom = max(p[1] for p in pos["sill"])
     assert top > bottom  # the plate rests on the posts, which rest on the sill
+
+
+def test_model_drawing_positions():
+    where = {"sill": (1.5, 0.0), "post_1": (0.0, 1.0), "post_2": (3.0, 1.0), "rail": (1.5, 1.0), "plate": (1.5, 2.0)}
+    d = models.drawing(wall(), positions=where)
+    centers = {}
+    for it in d.items:
+        if it["t"] == "poly" and it.get("n"):
+            xs = [p[0] for p in it["pts"]]
+            ys = [p[1] for p in it["pts"]]
+            centers.setdefault(it["n"], ((min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2))
+    assert centers["post_1"][0] < centers["rail"][0] < centers["post_2"][0]
+    assert centers["sill"][1] < centers["rail"][1] < centers["plate"][1]

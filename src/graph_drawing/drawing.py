@@ -20,7 +20,7 @@ Node attributes read by :func:`draw`
     stroke       ring colour, stroke_width its width
     text_color   label colour (default: black or white, whichever reads better)
     label_size   label height (default 0.19), bold (default True)
-    shape        "circle" (default), "octagon" or "box"
+    shape        "circle" (default), "octagon", "triangle" (pointing up) or "box"
     radius       circle radius (default R), width and height for boxes
     outline      radius where arrow tips end (default: the outer edge of the ring)
     fixed        True: the node never fades in a focus (ground nodes)
@@ -461,7 +461,7 @@ def _outline(d):
     if d.get("outline") is not None:
         return ("circle", d["outline"])
     r = d.get("radius", R)
-    if shape == "octagon":
+    if shape in ("octagon", "triangle"):
         return ("circle", r * 1.1)
     if d.get("stroke"):
         return ("circle", r + d.get("stroke_width", 0.0) / 2.0)
@@ -496,6 +496,10 @@ def _node_items(n, x, y, d):
         r = d.get("radius", R) * 1.1
         pts = [(x + r * math.cos(math.pi / 8 + i * math.pi / 4), y + r * math.sin(math.pi / 8 + i * math.pi / 4)) for i in range(8)]
         items.append(dict({"t": "poly", "pts": pts, "fill": fill, "stroke": stroke, "w": w, "dash": None}, **tag))
+    elif shape == "triangle":
+        r = d.get("radius", R) * 1.1
+        pts = [(x + r * math.cos(math.pi / 2 + i * 2 * math.pi / 3), y + r * math.sin(math.pi / 2 + i * 2 * math.pi / 3)) for i in range(3)]
+        items.append(dict({"t": "poly", "pts": pts, "fill": fill, "stroke": stroke, "w": w, "dash": None}, **tag))
     elif shape == "box":
         bw, bh = _box_size(d)
         x0, x1, y0, y1 = x - bw / 2.0, x + bw / 2.0, y - bh / 2.0, y + bh / 2.0
@@ -503,8 +507,9 @@ def _node_items(n, x, y, d):
                            "fill": fill, "stroke": stroke, "w": w, "dash": d.get("dash")}, **tag))
     else:
         items.append(dict({"t": "circle", "c": (x, y), "r": d.get("radius", R), "fill": fill, "stroke": stroke, "w": w}, **tag))
-    items.append(dict({"t": "text", "s": label, "pos": (x, y), "size": size, "color": txt,
-                       "anchor": "middle", "bold": d.get("bold", True)}, **tag))
+    if label:
+        items.append(dict({"t": "text", "s": label, "pos": (x, y), "size": size, "color": txt,
+                           "anchor": "middle", "bold": d.get("bold", True)}, **tag))
     return items
 
 

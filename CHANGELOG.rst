@@ -5,6 +5,8 @@ Changelog
 x.x.x
 -------
 
+* ``models.drawing`` takes the positions of the elements, so a drawing can follow the structure.
+
 
 0.1.0
 -------

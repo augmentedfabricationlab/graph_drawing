@@ -57,10 +57,11 @@ def test_focus(graph):
 def test_drawing(tmp_path):
     d = frames.drawing(CORNER)
     assert d.title == "timber_corner_structure"
-    assert len(d.items) == 168
+    assert len(d.items) == 166
     texts = [it["s"] for it in d.items if it["t"] == "text"]
     assert "Front wall" in texts and "Side wall" in texts
-    assert texts.count("G") == 2
+    grounds = [it for it in d.items if it["t"] == "poly" and len(it["pts"]) == 3 and it["fill"] == "#000000"]
+    assert len(grounds) == 2
     svg = d.to_svg()
     assert svg.startswith("<svg") and "Times New Roman" in svg
     pdf = d.to_pdf(str(tmp_path / "corner.pdf"))

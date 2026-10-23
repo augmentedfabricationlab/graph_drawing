@@ -19,7 +19,7 @@ Install it in editable mode into the Python that Rhino 8 uses (see README.rst)::
 Main concepts
 =============
 
-A drawing is made in three steps, the same for every kind of graph:
+A drawing is made in three steps:
 
 1. A **graph** (:class:`compas.datastructures.Graph`) whose nodes and edges
    carry styling attributes: label, fill, ring, shape; colour, dash, arrow.
