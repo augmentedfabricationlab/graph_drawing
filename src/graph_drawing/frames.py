@@ -20,8 +20,7 @@ Main functions
     report          the consistency check between JSON and geometry
     focus           how every part relates to a selected one
 
-No Rhino imports here, so the same code runs in Rhino 8 (CPython 3.9) and in a
-plain Python for testing.
+The same code runs in Rhino 8 (CPython 3.9) and in a plain Python for testing.
 """
 
 from __future__ import absolute_import

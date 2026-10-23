@@ -7,8 +7,7 @@ Schematic drawings of graphs in Rhino, in Grasshopper, as SVG and as PDF.
 Any graph whose nodes and edges carry a few styling attributes can be drawn:
 a sequence of actions, a program of interventions, the members of a structure
 and their connections. The same drawing becomes SVG, PDF, Rhino geometry and a
-picture on the Grasshopper canvas, so all four look the same. The package
-needs only [COMPAS](https://compas.dev): no Graphviz, no networkx.
+picture on the Grasshopper canvas, so all four look the same.
 
 <figure markdown>
   ![Support graph of a timber corner structure](_images/corner_support.svg)

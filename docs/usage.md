@@ -110,8 +110,8 @@ first and crossings second, and stay straight where that is clear.
 ## SVG and PDF
 
 A [`Drawing`][graph_drawing.drawing.Drawing] writes itself as SVG text or as a
-one-page PDF, both as vector graphics and without further dependencies. It is
-a COMPAS `Data` object as well, so it saves and loads as JSON.
+one-page PDF, both as vector graphics. It is a COMPAS `Data` object as well,
+so it saves and loads as JSON.
 
 ```python
 with open("drawing.svg", "w") as f:

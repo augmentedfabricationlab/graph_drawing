@@ -1,5 +1,5 @@
 """
-SVG and PDF of a drawing, as vector graphics and without dependencies.
+SVG and PDF of a drawing, as vector graphics.
 """
 
 from __future__ import absolute_import

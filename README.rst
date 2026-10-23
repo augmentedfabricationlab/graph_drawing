@@ -38,7 +38,7 @@ Requirements
 * `Github Desktop <https://desktop.github.com/>`_
 
 The package needs ``compas>=2.15.1``. ``compas_model`` is needed only for
-``from_model`` (``pip install -e .[model]``). Nothing else: no Graphviz, no networkx.
+``from_model`` (``pip install -e .[model]``).
 
 Installation
 ------------
