@@ -1171,8 +1171,8 @@ with positions for its nodes. It reads these attributes:</p>
 first and crossings second, and stay straight where that is clear.</p>
 <h2 id="svg-and-pdf">SVG and PDF<a class="headerlink" href="#svg-and-pdf" title="Permanent link">¤</a></h2>
 <p>A <a class="autorefs autorefs-internal" title="            Drawing" href="../api/graph_drawing.drawing/#graph_drawing.drawing.Drawing"><code>Drawing</code></a> writes itself as SVG text or as a
-one-page PDF, both as vector graphics and without further dependencies. It is
-a COMPAS <code>Data</code> object as well, so it saves and loads as JSON.</p>
+one-page PDF, both as vector graphics. It is a COMPAS <code>Data</code> object as well,
+so it saves and loads as JSON.</p>
 <div class="language-python highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"drawing.svg"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">drawing</span><span class="o">.</span><span class="n">to_svg</span><span class="p">())</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">drawing</span><span class="o">.</span><span class="n">to_pdf</span><span class="p">(</span><span class="s2">"drawing.pdf"</span><span class="p">)</span>
